@@ -1,0 +1,40 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id sint veniam sit reprehenderit. Nisi quis ex voluptate consectetur exercitation mollit incididunt consequat. Incididunt irure duis anim tempor."
+						}
+					}
+				]
+			},
+			"applicant_description": {
+				"__TYPE__": "FieldContent",
+				"value": "brought",
+				"type": "Text"
+			},
+			"top_left_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "ocean",
+				"type": "Text"
+			},
+			"back_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "original",
+				"type": "Text"
+			},
+			"next_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "behind",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

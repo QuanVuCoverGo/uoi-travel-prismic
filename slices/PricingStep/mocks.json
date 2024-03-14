@@ -1,0 +1,50 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"basic_plan_description": {
+				"__TYPE__": "FieldContent",
+				"value": "carefully",
+				"type": "Text"
+			},
+			"essential_plan_description": {
+				"__TYPE__": "FieldContent",
+				"value": "bear",
+				"type": "Text"
+			},
+			"preferred_plan_description": {
+				"__TYPE__": "FieldContent",
+				"value": "cattle",
+				"type": "Text"
+			},
+			"top_left_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "industry",
+				"type": "Text"
+			},
+			"back_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "chair",
+				"type": "Text"
+			},
+			"next_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "pink",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Velit enim minim consequat sunt mollit nisi enim. Veniam fugiat duis exercitation exercitation voluptate voluptate reprehenderit ut. Aute culpa sit nostrud."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

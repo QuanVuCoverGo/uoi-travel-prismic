@@ -1,0 +1,70 @@
+{
+  "id": "pricing_step",
+  "type": "SharedSlice",
+  "name": "PricingStep",
+  "description": "PricingStep",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "basic_plan_description": {
+          "type": "Text",
+          "config": {
+            "label": "Basic plan description",
+            "placeholder": ""
+          }
+        },
+        "essential_plan_description": {
+          "type": "Text",
+          "config": {
+            "label": "Essential plan description",
+            "placeholder": ""
+          }
+        },
+        "preferred_plan_description": {
+          "type": "Text",
+          "config": {
+            "label": "Preferred plan description",
+            "placeholder": ""
+          }
+        },
+        "top_left_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Top left button text",
+            "placeholder": ""
+          }
+        },
+        "back_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Back button text",
+            "placeholder": ""
+          }
+        },
+        "next_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Next button text",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

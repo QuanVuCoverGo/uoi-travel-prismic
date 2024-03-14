@@ -1,0 +1,122 @@
+{
+  "id": "trip_information_step",
+  "type": "SharedSlice",
+  "name": "TripInformationStep",
+  "description": "TripInformationStep",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "back_ground_image": {
+          "type": "Image",
+          "config": {
+            "label": "Back ground image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "firstTitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "First title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "secondTitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Second title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "single_trip_tooltip_content": {
+          "type": "Text",
+          "config": {
+            "label": "Single trip tooltip content",
+            "placeholder": ""
+          }
+        },
+        "multi_trip_tooltip_content": {
+          "type": "Text",
+          "config": {
+            "label": "multi trip tooltip content",
+            "placeholder": ""
+          }
+        },
+        "individual_tooltip_content": {
+          "type": "Text",
+          "config": {
+            "label": "Individual tooltip content",
+            "placeholder": ""
+          }
+        },
+        "family_tooltip_content": {
+          "type": "Text",
+          "config": {
+            "label": "Family tooltip content",
+            "placeholder": ""
+          }
+        },
+        "bottom_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Bottom button text",
+            "placeholder": ""
+          }
+        },
+        "destination_label": {
+          "type": "Text",
+          "config": {
+            "label": "Destination label",
+            "placeholder": ""
+          }
+        },
+        "duration_label": {
+          "type": "Text",
+          "config": {
+            "label": "Duration label",
+            "placeholder": ""
+          }
+        },
+        "type_of_insurance_label": {
+          "type": "Text",
+          "config": {
+            "label": "Type of insurance label",
+            "placeholder": ""
+          }
+        },
+        "type_of_insured_label": {
+          "type": "Text",
+          "config": {
+            "label": "Type of insured label",
+            "placeholder": ""
+          }
+        },
+        "area_label": {
+          "type": "Text",
+          "config": {
+            "label": "Area label",
+            "placeholder": ""
+          }
+        },
+        "multi_duration_label": {
+          "type": "Text",
+          "config": {
+            "label": "multi_duration_label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

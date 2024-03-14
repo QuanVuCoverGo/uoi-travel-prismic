@@ -1,0 +1,16 @@
+{
+  "id": "finish_page",
+  "type": "SharedSlice",
+  "name": "FinishPage",
+  "description": "FinishPage",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

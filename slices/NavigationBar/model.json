@@ -1,0 +1,54 @@
+{
+  "id": "navigation_bar",
+  "type": "SharedSlice",
+  "name": "NavigationBar",
+  "description": "NavigationBar",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "name_step_one": {
+          "type": "Text",
+          "config": {
+            "label": "Name Step One",
+            "placeholder": ""
+          }
+        },
+        "name_step_two": {
+          "type": "Text",
+          "config": {
+            "label": "Name step two",
+            "placeholder": ""
+          }
+        },
+        "name_step_three": {
+          "type": "Text",
+          "config": {
+            "label": "Name step three",
+            "placeholder": ""
+          }
+        },
+        "name_step_four": {
+          "type": "Text",
+          "config": {
+            "label": "Name step four",
+            "placeholder": ""
+          }
+        },
+        "name_step_five": {
+          "type": "Text",
+          "config": {
+            "label": "Name step five",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

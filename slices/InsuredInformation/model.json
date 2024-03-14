@@ -1,0 +1,56 @@
+{
+  "id": "insured_information",
+  "type": "SharedSlice",
+  "name": "InsuredInformation",
+  "description": "InsuredInformation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "applicant_description": {
+          "type": "Text",
+          "config": {
+            "label": "Applicant description",
+            "placeholder": ""
+          }
+        },
+        "top_left_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Top left button text",
+            "placeholder": ""
+          }
+        },
+        "back_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Back button text",
+            "placeholder": ""
+          }
+        },
+        "next_button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Next button text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

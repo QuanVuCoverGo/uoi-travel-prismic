@@ -1,0 +1,109 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"back_ground_image": {
+				"origin": {
+					"id": "92HwFhCp-MQ",
+					"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAzNTE3MzB8MA&ixlib=rb-4.0.3&q=85",
+					"width": 3699,
+					"height": 2959
+				},
+				"url": "https://images.unsplash.com/photo-1590004828948-09db7606e5ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw3fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MTAzNTE3MzB8MA&ixlib=rb-4.0.3&q=85",
+				"width": 3699,
+				"height": 2959,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"alt": "sliced orange fruit on white surface",
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"firstTitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Cookies"
+						}
+					}
+				]
+			},
+			"secondTitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Tired"
+						}
+					}
+				]
+			},
+			"single_trip_tooltip_content": {
+				"__TYPE__": "FieldContent",
+				"value": "walk",
+				"type": "Text"
+			},
+			"multi_trip_tooltip_content": {
+				"__TYPE__": "FieldContent",
+				"value": "sky",
+				"type": "Text"
+			},
+			"individual_tooltip_content": {
+				"__TYPE__": "FieldContent",
+				"value": "church",
+				"type": "Text"
+			},
+			"family_tooltip_content": {
+				"__TYPE__": "FieldContent",
+				"value": "fall",
+				"type": "Text"
+			},
+			"bottom_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "automobile",
+				"type": "Text"
+			},
+			"destination_label": {
+				"__TYPE__": "FieldContent",
+				"value": "lying",
+				"type": "Text"
+			},
+			"duration_label": {
+				"__TYPE__": "FieldContent",
+				"value": "two",
+				"type": "Text"
+			},
+			"type_of_insurance_label": {
+				"__TYPE__": "FieldContent",
+				"value": "topic",
+				"type": "Text"
+			},
+			"type_of_insured_label": {
+				"__TYPE__": "FieldContent",
+				"value": "last",
+				"type": "Text"
+			},
+			"area_label": {
+				"__TYPE__": "FieldContent",
+				"value": "double",
+				"type": "Text"
+			},
+			"multi_duration_label": {
+				"__TYPE__": "FieldContent",
+				"value": "harbor",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
