@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | FinishPageSlice
   | InsuredInformationSlice
   | SummaryInformationSlice
   | PricingStepSlice
@@ -229,6 +230,46 @@ export type CallToActionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FinishPage → Primary*
+ */
+export interface FinishPageSliceDefaultPrimary {
+  /**
+   * Button link field in *FinishPage → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finish_page.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Icon name field in *FinishPage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finish_page.primary.icon_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  icon_name: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *FinishPage → Items*
+ */
+export interface FinishPageSliceDefaultItem {
+  /**
+   * Note field in *FinishPage → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finish_page.items[].note
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  note: prismic.RichTextField;
+}
+
+/**
  * Default variation for FinishPage Slice
  *
  * - **API ID**: `default`
@@ -237,8 +278,8 @@ export type CallToActionSlice = prismic.SharedSlice<
  */
 export type FinishPageSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  never
+  Simplify<FinishPageSliceDefaultPrimary>,
+  Simplify<FinishPageSliceDefaultItem>
 >;
 
 /**
@@ -1154,6 +1195,8 @@ declare module "@prismicio/client" {
       CallToActionSliceDefault,
       CallToActionSliceAlignLeft,
       FinishPageSlice,
+      FinishPageSliceDefaultPrimary,
+      FinishPageSliceDefaultItem,
       FinishPageSliceVariation,
       FinishPageSliceDefault,
       HeroSlice,

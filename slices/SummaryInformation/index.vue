@@ -7,7 +7,7 @@ import moment from "moment";
 import InsuredDisplay from "@/components/InsuredDisplay.vue";
 import { getRequiredRules } from "@/composables/rules";
 import { getAreaDescription } from "@/utils/common";
-
+import { asHTML } from "@prismicio/client";
 const store = useInformationStore();
 
 const basicInformation = computed(() => store.insurance);
@@ -60,11 +60,13 @@ defineProps(
         color="primary"
         class="text-none"
         @click="handleBack"
-        >Back</v-btn
+        >{{ slice.primary.top_left_button }}</v-btn
       >
 
       <div class="d-flex justify-center align-center">
-        <h3 class="text-left color-blue header mb-10">Summary</h3>
+        <h3 class="text-left color-blue header mb-10">
+          <PrismicText :field="slice.primary.title"></PrismicText>
+        </h3>
       </div>
       <v-form class="d-flex flex-column" @submit.prevent="handleNext">
         <div class="d-flex flex-column justify-center align-center ga-16">
@@ -172,11 +174,12 @@ defineProps(
             class="d-flex flex-column justify-center align-center ga-2 term-box"
           >
             <p class="term-label w-100">Acknowledgement and Confirmation</p>
-            <p class="term-text">
-              <PrismicText
-                :field="slice.primary.confirmation_content"
-              ></PrismicText>
-            </p>
+
+            <div
+              class="term-text"
+              v-html="asHTML(slice.primary.confirmation_content)"
+            ></div>
+
             <v-checkbox
               :rules="getRequiredRules('This action')"
               v-model="store.isTermAgreed"

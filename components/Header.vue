@@ -48,7 +48,6 @@ const steps = [
 .container {
   background-color: white;
   width: 100%;
-  height: 66px;
 }
 
 .v-stepper.v-sheet {

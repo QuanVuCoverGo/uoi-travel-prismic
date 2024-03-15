@@ -2,7 +2,40 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
-		"items": []
+		"primary": {
+			"icon_name": {
+				"__TYPE__": "FieldContent",
+				"value": "fed",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"note",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Lorem cupidatat excepteur mollit ex eu eiusmod sint tempor deserunt labore et sunt ipsum duis labore. Aliqua mollit sint sint in minim reprehenderit adipisicing magna culpa proident aliqua."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

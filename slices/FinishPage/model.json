@@ -10,7 +10,36 @@
       "docURL": "...",
       "version": "initial",
       "description": "Default",
-      "imageUrl": ""
+      "imageUrl": "",
+      "primary": {
+        "button_link": {
+          "type": "Link",
+          "config": {
+            "label": "Button link",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "icon_name": {
+          "type": "Text",
+          "config": {
+            "label": "Icon name",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "note": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Note",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      }
     }
   ]
 }

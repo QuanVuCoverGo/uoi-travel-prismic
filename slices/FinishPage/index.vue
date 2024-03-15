@@ -1,5 +1,25 @@
 <script setup lang="ts">
 import { type Content } from "@prismicio/client";
+import { useInformationStore } from "@/stores/InformationStore";
+import moment from "moment";
+import { asLink } from "@prismicio/client";
+
+const store = useInformationStore();
+
+useHead({
+  link: [
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+      crossorigin: "",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
+      crossorigin: "",
+    },
+  ],
+});
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
@@ -9,16 +29,67 @@ defineProps(
     "index",
     "slices",
     "context",
-  ]),
+  ])
 );
 </script>
 
 <template>
-  <section
-    :data-slice-type="slice.slice_type"
-    :data-slice-variation="slice.variation"
+  <Header :showHeader="false" />
+  <div
+    class="d-flex align-center justify-center flex-column ga-10 brown-main"
+    style="min-height: 300px"
   >
-    Placeholder component for finish_page (variation: {{ slice.variation }})
-    Slices
-  </section>
+    <v-container class="pa-10 w-75">
+      <div class="d-flex flex-column justify-center align-center ga-16">
+        <v-card style="padding: 30px 70px" class="applicant-card">
+          <template v-slot:title>
+            <div class="d-flex flex-column justify-center align-center ga-4">
+              <v-icon size="x-large" color="#4CAF50">{{
+                slice.primary.icon_name
+              }}</v-icon>
+              <p class="card-title mb-4 text-center">Your policy is issued</p>
+            </div>
+          </template>
+          <template v-slot:text>
+            <div class="d-flex flex-column justify-center align-center ga-4">
+              <p class="card-subtitle text-center">
+                Policy number:
+                <span class="font-weight-bold">302394390023</span>
+              </p>
+              <p class="card-subtitle text-center">
+                Your insurance will be active from
+                {{ moment(store.insurance.startDate).format("DD MMMM YYYY") }}
+                to {{ moment(store.insurance.endDate).format("DD MMMM YYYY") }}.
+              </p>
+              <v-btn
+                :href="asLink(slice.primary.button_link) || ''"
+                target="_blank"
+                class="text-none text-purple-darken-2"
+                variant="outlined"
+                >View policy</v-btn
+              >
+            </div>
+          </template>
+        </v-card>
+      </div>
+      <div class="d-flex flex-column justify-center align-center ga-16 mt-8">
+        <div class="w-50 d-flex justify-center flex-column ga-4">
+          <p class="card-subtitle">
+            Please take note of the following important points:
+          </p>
+          <ul class="ml-6">
+            <li v-for="item in slice.items" class="card-subtitle">
+              <PrismicRichText :field="item.note"></PrismicRichText>
+            </li>
+          </ul>
+          <p class="card-subtitle font-weight-bold">
+            We wish you a safe and enjoyable trip!
+          </p>
+        </div>
+      </div>
+
+      <!-- applicant card  -->
+    </v-container>
+    <Footer />
+  </div>
 </template>

@@ -7,7 +7,7 @@
         variant="text"
         color="primary"
         class="text-none"
-        @click="store.step = 4"
+        @click="handleBack"
         >Back</v-btn
       >
       <div class="d-flex justify-center align-center">
@@ -125,6 +125,11 @@ const handleNext = async () => {
   const { valid } = await paymentForm.value?.validate();
   if (!valid) return;
   navigateTo(`/workflows/issue-finish`);
+};
+
+const handleBack = async () => {
+  store.step = 4;
+  onPrevious(5);
 };
 </script>
 <style>

@@ -13,11 +13,6 @@ export default defineNuxtConfig({
     endpoint: "uoi-travel-prismic",
     clientConfig: {
       routes: [
-        // Resolves the Homepage document to "/"
-        {
-          type: "page",
-          path: "/",
-        },
         // Resolves the About Page document to "/about"
         {
           type: "page",
@@ -28,5 +23,8 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     // Options
+  },
+  routeRules: {
+    "/": { redirect: "/workflows/trip-information" },
   },
 });

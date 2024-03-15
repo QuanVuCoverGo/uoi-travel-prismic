@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { type Content } from "@prismicio/client";
 
-import { reactive, watch, computed, ref, onBeforeMount } from "vue";
-import Header from "../components/Header.vue";
+import { watch, computed, ref, onBeforeMount } from "vue";
 import DestinationSelect from "@/components/DestinationSelect.vue";
 import moment from "moment";
 import TypeInsurance from "@/components/TypeInsurance.vue";
 import InsuredCountInput from "@/components/InsuredCountInput.vue";
-import { asText } from "@prismicio/client";
+
 import {
   useInformationStore,
   TripType,

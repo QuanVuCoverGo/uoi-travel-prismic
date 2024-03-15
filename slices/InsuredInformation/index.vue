@@ -96,7 +96,7 @@ defineProps(
         color="primary"
         class="text-none"
         @click="handleBack"
-        >{{ slice.primary.back_button_text }}</v-btn
+        >{{ slice.primary.top_left_button_text }}</v-btn
       >
       <div class="d-flex justify-center align-center">
         <h3 class="text-left color-blue header mb-10">

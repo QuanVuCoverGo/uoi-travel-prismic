@@ -106,7 +106,7 @@ defineProps(
         color="primary"
         class="text-none"
         @click="handleBack"
-        >{{ slice.primary.back_button_text }}</v-btn
+        >{{ slice.primary.top_left_button_text }}</v-btn
       >
       <v-row class="mb-10">
         <v-col cols="4"></v-col>
