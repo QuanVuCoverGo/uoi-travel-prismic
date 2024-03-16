@@ -1,8 +1,8 @@
 {
-  "id": "insured_information",
+  "id": "payment_step",
   "type": "SharedSlice",
-  "name": "InsuredInformation",
-  "description": "InsuredInformation",
+  "name": "PaymentStep",
+  "description": "PaymentStep",
   "variations": [
     {
       "id": "default",
@@ -21,24 +21,10 @@
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "applicant_description": {
-          "type": "Text",
-          "config": {
-            "label": "Applicant description",
-            "placeholder": ""
-          }
-        },
         "top_left_button_text": {
           "type": "Text",
           "config": {
             "label": "Top left button text",
-            "placeholder": ""
-          }
-        },
-        "back_button_text": {
-          "type": "Text",
-          "config": {
-            "label": "Back button text",
             "placeholder": ""
           }
         },
@@ -49,10 +35,10 @@
             "placeholder": ""
           }
         },
-        "email_note": {
+        "back_button_text": {
           "type": "Text",
           "config": {
-            "label": "Email note",
+            "label": "Back button text",
             "placeholder": ""
           }
         }

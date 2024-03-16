@@ -126,7 +126,7 @@
                 <v-tooltip max-width="300" :text="getToolTip(item.name)">
                   <template v-slot:activator="{ props }">
                     <v-icon color="grey-lighten-1" v-bind="props"
-                      >error_outline</v-icon
+                      >info_outlined</v-icon
                     >
                   </template>
                 </v-tooltip>

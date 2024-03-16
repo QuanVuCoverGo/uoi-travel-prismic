@@ -72,7 +72,7 @@ watch(
   }
 );
 
-onBeforeMount(() => {
+onMounted(() => {
   if (store.insurance?.typeOfInsuranceTrip !== undefined) {
     if (store.insurance?.typeOfInsuranceTrip === "single") tripType.value = 0;
     else tripType.value = 1;
@@ -126,10 +126,10 @@ defineProps(
             >
               <v-item v-slot="{ isSelected, toggle }">
                 <v-card
-                  :class="[
-                    'd-flex align-center pa-4 card-no-shadow w-100 justify-center mr-4',
-                    isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-3',
-                  ]"
+                  class="d-flex align-center pa-4 card-no-shadow w-100 justify-center mr-4"
+                  :class="
+                    isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-4'
+                  "
                   min-height="191"
                   width="292"
                   dark
@@ -150,7 +150,7 @@ defineProps(
                     >
                       <template v-slot:activator="{ props }">
                         <v-icon color="grey-lighten-1" v-bind="props"
-                          >error_outline</v-icon
+                          >info_outlined</v-icon
                         >
                       </template>
                     </v-tooltip>
@@ -175,7 +175,7 @@ defineProps(
                 <v-card
                   :class="[
                     'd-flex align-center pa-4 card-no-shadow w-100 justify-center ml-4',
-                    isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-3',
+                    isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-4',
                   ]"
                   min-height="191"
                   :color="isSelected ? 'white' : 'grey-lighten-3'"
@@ -197,7 +197,7 @@ defineProps(
                     >
                       <template v-slot:activator="{ props }">
                         <v-icon color="grey-lighten-1" v-bind="props"
-                          >error_outline</v-icon
+                          >info_outlined</v-icon
                         >
                       </template>
                     </v-tooltip>
@@ -250,8 +250,8 @@ defineProps(
                   'When will your insurance start?'
             "
           >
-            <v-row class="w-75">
-              <v-col>
+            <v-row class="w-100 justify-space-between ma-0 margin-row">
+              <v-col class="pl-0">
                 <date-picker
                   label="Start Date"
                   v-model="store.insurance.startDate"
@@ -260,7 +260,7 @@ defineProps(
                   :rules="getRequiredRules('Start date')"
                 />
               </v-col>
-              <v-col>
+              <v-col class="pr-0">
                 <date-picker
                   :disabled="
                     store.insurance.typeOfInsuranceTrip === 'annualMulti'
@@ -278,7 +278,7 @@ defineProps(
                 Boolean(store.insurance.startDate) &&
                 Boolean(store.insurance.endDate)
               "
-              class="bg-grey-lighten-3 w-auto pa-2 fit-content"
+              class="bg-grey-lighten-4 w-auto pa-2 fit-content ma-0"
             >
               <v-icon size="small"> check_circle_outline </v-icon>
               <p
@@ -325,13 +325,13 @@ defineProps(
           />
           <template v-if="store.insurance.typeOfInsurance === 'family'">
             <InsuredCountInput
-              label="Adults"
+              label="Adult(s)"
               v-model="store.insurance.adults"
               :max="2"
             />
             <InsuredCountInput
               label="Child(ren)"
-              :tooltipContent="'Tooltip (Children) Child is also a student up to 23 years old'"
+              :tooltipContent="slice.primary.children_tooltip_content"
               v-model="store.insurance.children"
               :max="7"
             />
@@ -362,8 +362,13 @@ defineProps(
   </WorkFlowLayout>
 </template>
 
-<style>
+<style scoped>
 .blue-border {
   border: 2px solid #397ded !important;
+}
+
+.margin-row {
+  margin: 0;
+  margin-bottom: -20px !important;
 }
 </style>

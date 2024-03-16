@@ -8,7 +8,7 @@
         <v-card
           :class="[
             'd-flex align-center pa-4 card-no-shadow w-100 justify-center mr-4',
-            isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-3',
+            isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-4',
           ]"
           height="191"
           :color="isSelected ? 'white' : 'grey-lighten-3'"
@@ -27,7 +27,7 @@
             <v-tooltip max-width="300" :text="childTooltipContent">
               <template v-slot:activator="{ props }">
                 <v-icon color="grey-lighten-1" v-bind="props"
-                  >error_outline</v-icon
+                  >info_outlined</v-icon
                 >
               </template>
             </v-tooltip>
@@ -44,7 +44,7 @@
         <v-card
           :class="[
             'd-flex align-center pa-4 card-no-shadow w-100 justify-center ml-4',
-            isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-3',
+            isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-4',
           ]"
           height="191"
           :color="isSelected ? 'white' : 'grey-lighten-3'"
@@ -63,7 +63,7 @@
             <v-tooltip max-width="300" :text="familyTooltipContent">
               <template v-slot:activator="{ props }">
                 <v-icon color="grey-lighten-1" v-bind="props"
-                  >error_outline</v-icon
+                  >info_outlined</v-icon
                 >
               </template>
             </v-tooltip>

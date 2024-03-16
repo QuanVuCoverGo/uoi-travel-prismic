@@ -9,34 +9,24 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Id sint veniam sit reprehenderit. Nisi quis ex voluptate consectetur exercitation mollit incididunt consequat. Incididunt irure duis anim tempor."
+							"text": "Eu dolore culpa aute laboris adipisicing velit deserunt irure sunt et aliquip ipsum cillum commodo eiusmod. Consequat excepteur aliqua incididunt officia tempor sit minim."
 						}
 					}
 				]
 			},
-			"applicant_description": {
-				"__TYPE__": "FieldContent",
-				"value": "brought",
-				"type": "Text"
-			},
 			"top_left_button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "ocean",
-				"type": "Text"
-			},
-			"back_button_text": {
-				"__TYPE__": "FieldContent",
-				"value": "original",
+				"value": "local",
 				"type": "Text"
 			},
 			"next_button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "behind",
+				"value": "stage",
 				"type": "Text"
 			},
-			"email_note": {
+			"back_button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "shoot",
+				"value": "greater",
 				"type": "Text"
 			}
 		},

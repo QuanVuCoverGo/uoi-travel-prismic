@@ -62,6 +62,30 @@
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "basic_plan_details_url": {
+          "type": "Link",
+          "config": {
+            "label": "Basic plan details url",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "essential_plan_details_url": {
+          "type": "Link",
+          "config": {
+            "label": "Essential plan details url",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "preferred_plan_details_url": {
+          "type": "Link",
+          "config": {
+            "label": "Preferred plan details url",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}

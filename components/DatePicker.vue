@@ -10,7 +10,12 @@
         :rules="rules"
         class="w-100 mb-2"
         v-bind="props"
-      ></v-text-field>
+        placeholder="DD/MM/YYYY"
+      >
+        <template #append-inner>
+          <v-icon>calendar_today</v-icon>
+        </template>
+      </v-text-field>
     </template>
     <v-date-picker
       v-model="selectedDate"

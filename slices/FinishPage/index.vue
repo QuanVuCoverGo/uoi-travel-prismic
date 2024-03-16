@@ -66,14 +66,34 @@ defineProps(
                 target="_blank"
                 class="text-none text-purple-darken-2"
                 variant="outlined"
-                >View policy</v-btn
+                >{{ slice.primary.button_text || "View policy" }}</v-btn
               >
             </div>
           </template>
         </v-card>
       </div>
-      <div class="d-flex flex-column justify-center align-center ga-16 mt-8">
-        <div class="w-50 d-flex justify-center flex-column ga-4">
+      <div class="mt-4 d-flex justify-center">
+        <div class="d-flex flex-column justify-center ga-2 term-box">
+          <p class="card-subtitle">
+            Please take note of the following important points:
+          </p>
+          <ul class="ml-8">
+            <li v-for="item in slice.items" class="card-subtitle">
+              <PrismicRichText :field="item.note"></PrismicRichText>
+            </li>
+          </ul>
+          <p class="card-subtitle font-weight-bold">
+            {{
+              slice.primary.wish_text ||
+              "We wish you a safe and enjoyable trip!"
+            }}
+          </p>
+        </div>
+      </div>
+      <!-- <div class="d-flex flex-column justify-center align-center ga-16 mt-8">
+        <div
+          class="w-75 d-flex justify-center flex-column ga-4 gl-0 pa-16 pt-0"
+        >
           <p class="card-subtitle">
             Please take note of the following important points:
           </p>
@@ -83,13 +103,26 @@ defineProps(
             </li>
           </ul>
           <p class="card-subtitle font-weight-bold">
-            We wish you a safe and enjoyable trip!
+            {{
+              slice.primary.wish_text ||
+              "We wish you a safe and enjoyable trip!"
+            }}
           </p>
         </div>
-      </div>
+      </div> -->
 
       <!-- applicant card  -->
     </v-container>
     <Footer />
   </div>
 </template>
+
+<style scoped>
+.term-box {
+  width: 580px;
+  padding: 20px 0;
+  border-radius: 8px;
+  gap: 12px;
+  background-color: transparent;
+}
+</style>

@@ -99,4 +99,24 @@ useHead({
 .brown-main {
   background-color: #f4f4f6;
 }
+
+.v-icon--size-x-small {
+  font-size: calc(var(--v-icon-size-multiplier) * 1em) !important;
+}
+
+.v-icon--size-small {
+  font-size: calc(var(--v-icon-size-multiplier) * 1.25em) !important;
+}
+
+.v-icon--size-default {
+  font-size: calc(var(--v-icon-size-multiplier) * 1.5em) !important;
+}
+
+.v-icon--size-large {
+  font-size: calc(var(--v-icon-size-multiplier) * 1.75em) !important;
+}
+
+.v-icon--size-x-large {
+  font-size: calc(var(--v-icon-size-multiplier) * 2em) !important;
+}
 </style>

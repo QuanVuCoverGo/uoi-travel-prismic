@@ -114,6 +114,13 @@
             "label": "multi_duration_label",
             "placeholder": ""
           }
+        },
+        "children_tooltip_content": {
+          "type": "Text",
+          "config": {
+            "label": "Children tooltip content",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

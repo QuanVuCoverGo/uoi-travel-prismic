@@ -27,6 +27,20 @@
             "label": "Icon name",
             "placeholder": ""
           }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button text",
+            "placeholder": ""
+          }
+        },
+        "wish_text": {
+          "type": "Text",
+          "config": {
+            "label": "Wish text",
+            "placeholder": ""
+          }
         }
       },
       "items": {

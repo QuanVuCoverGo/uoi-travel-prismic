@@ -5,6 +5,7 @@ import { ref, computed, reactive, onMounted } from "vue";
 import Header from "../components/Header.vue";
 import { useInformationStore } from "@/stores/InformationStore";
 import { PRICINGS_DETAILS } from "@/constants";
+import { asLink } from "@prismicio/client";
 
 const defaultCode = "DHK233DH";
 
@@ -136,7 +137,7 @@ defineProps(
                   :class="isApplied ? 'costPrice' : 'discounted-price'"
                   class="text-green-darken-2 font-weight-bold"
                 >
-                  SGD {{ formatPrice(discountPlanPrice.essential) }}
+                  SGD {{ formatPrice(discountPlanPrice.basic) }}
                 </p>
                 <p
                   :class="
@@ -226,7 +227,7 @@ defineProps(
                 <v-tooltip max-width="300" :text="getToolTip(item.name)">
                   <template v-slot:activator="{ props }">
                     <v-icon color="grey-lighten-1" v-bind="props"
-                      >error_outline</v-icon
+                      >info_outlined</v-icon
                     >
                   </template>
                 </v-tooltip>
@@ -334,7 +335,7 @@ defineProps(
               class="footer-cell"
             >
               <v-btn
-                href="https://drive.google.com/file/d/15sCw15SfDA80dQsluFFWKcuySk8DZQi4/view"
+                :href="asLink(slice.primary.basic_plan_details_url) || ''"
                 target="_blank"
                 variant="text"
               >
@@ -387,7 +388,7 @@ defineProps(
             >
               <v-btn
                 variant="text"
-                href="https://drive.google.com/file/d/15sCw15SfDA80dQsluFFWKcuySk8DZQi4/view"
+                :href="asLink(slice.primary.essential_plan_details_url) || ''"
                 target="_blank"
               >
                 <v-icon color="#1976d2" size="small">description</v-icon>
@@ -439,10 +440,10 @@ defineProps(
             >
               <v-btn
                 variant="text"
-                href="https://drive.google.com/file/d/15sCw15SfDA80dQsluFFWKcuySk8DZQi4/view"
+                :href="asLink(slice.primary.preferred_plan_details_url) || ''"
                 target="_blank"
               >
-                <v-icon color="#1976d2" size="small">check_circle</v-icon>
+                <v-icon color="#1976d2" size="small">description</v-icon>
                 <p class="link-text">Full details</p>
               </v-btn>
               <div class="d-flex justify-center align-center ga-2">
@@ -495,7 +496,7 @@ defineProps(
           <div v-if="isApplied" class="discount-tag bg-green-lighten-4">
             <v-icon color="#4CAF50" size="small"> check_circle_outline </v-icon>
             <span class="discount-text ml-2"
-              >Most We applied {{ defaultCode }} for
+              >We applied {{ defaultCode }} for
               <span class="font-weight-bold"
                 >{{ discountValue }}% off</span
               ></span

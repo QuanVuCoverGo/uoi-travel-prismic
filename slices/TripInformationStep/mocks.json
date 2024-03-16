@@ -102,6 +102,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "harbor",
 				"type": "Text"
+			},
+			"children_tooltip_content": {
+				"__TYPE__": "FieldContent",
+				"value": "climate",
+				"type": "Text"
 			}
 		},
 		"items": []

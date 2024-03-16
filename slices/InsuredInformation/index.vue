@@ -198,7 +198,12 @@ defineProps(
                 </div>
               </div>
               <div class="mt-4 w-100">
-                <p class="section-text">We will send policy documents to</p>
+                <p class="section-text">
+                  {{
+                    slice.primary.email_note ||
+                    "We will send policy documents to"
+                  }}
+                </p>
                 <v-text-field
                   variant="outlined"
                   label="Email"
@@ -262,7 +267,6 @@ defineProps(
     </v-container>
   </WorkFlowLayout>
 </template>
-
 <style>
 .a-main {
   background-color: #f4f4f6;
@@ -270,7 +274,6 @@ defineProps(
 }
 
 .applicant-card {
-  width: 580px;
   border-radius: 8px;
   gap: 40px;
   background-color: "red";

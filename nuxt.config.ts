@@ -2,10 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/prismic", "@pinia/nuxt", "@nuxtjs/google-fonts"],
-  css: [
-    "vuetify/lib/styles/main.sass",
-    "@mdi/font/css/materialdesignicons.min.css",
-  ],
+  css: ["vuetify/lib/styles/main.sass", "~/layouts/global.css"],
   build: {
     transpile: ["vuetify"],
   },

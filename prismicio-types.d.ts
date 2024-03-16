@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | PaymentStepSlice
   | FinishPageSlice
   | InsuredInformationSlice
   | SummaryInformationSlice
@@ -252,6 +253,26 @@ export interface FinishPageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   icon_name: prismic.KeyTextField;
+
+  /**
+   * Button text field in *FinishPage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finish_page.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Wish text field in *FinishPage → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: finish_page.primary.wish_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  wish_text: prismic.KeyTextField;
 }
 
 /**
@@ -692,6 +713,16 @@ export interface InsuredInformationSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   next_button_text: prismic.KeyTextField;
+
+  /**
+   * Email note field in *InsuredInformation → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insured_information.primary.email_note
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_note: prismic.KeyTextField;
 }
 
 /**
@@ -810,6 +841,81 @@ export type NavigationBarSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *PaymentStep → Primary*
+ */
+export interface PaymentStepSliceDefaultPrimary {
+  /**
+   * Title field in *PaymentStep → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_step.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Top left button text field in *PaymentStep → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_step.primary.top_left_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  top_left_button_text: prismic.KeyTextField;
+
+  /**
+   * Next button text field in *PaymentStep → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_step.primary.next_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  next_button_text: prismic.KeyTextField;
+
+  /**
+   * Back button text field in *PaymentStep → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: payment_step.primary.back_button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  back_button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PaymentStep Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PaymentStepSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PaymentStepSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PaymentStep*
+ */
+type PaymentStepSliceVariation = PaymentStepSliceDefault;
+
+/**
+ * PaymentStep Shared Slice
+ *
+ * - **API ID**: `payment_step`
+ * - **Description**: PaymentStep
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PaymentStepSlice = prismic.SharedSlice<
+  "payment_step",
+  PaymentStepSliceVariation
+>;
+
+/**
  * Primary content in *PricingStep → Primary*
  */
 export interface PricingStepSliceDefaultPrimary {
@@ -882,6 +988,36 @@ export interface PricingStepSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * Basic plan details url field in *PricingStep → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_step.primary.basic_plan_details_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  basic_plan_details_url: prismic.LinkField;
+
+  /**
+   * Essential plan details url field in *PricingStep → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_step.primary.essential_plan_details_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  essential_plan_details_url: prismic.LinkField;
+
+  /**
+   * Preferred plan details url field in *PricingStep → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing_step.primary.preferred_plan_details_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  preferred_plan_details_url: prismic.LinkField;
 }
 
 /**
@@ -1142,6 +1278,16 @@ export interface TripInformationStepSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   multi_duration_label: prismic.KeyTextField;
+
+  /**
+   * Children tooltip content field in *TripInformationStep → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_information_step.primary.children_tooltip_content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  children_tooltip_content: prismic.KeyTextField;
 }
 
 /**
@@ -1219,6 +1365,10 @@ declare module "@prismicio/client" {
       NavigationBarSliceDefaultPrimary,
       NavigationBarSliceVariation,
       NavigationBarSliceDefault,
+      PaymentStepSlice,
+      PaymentStepSliceDefaultPrimary,
+      PaymentStepSliceVariation,
+      PaymentStepSliceDefault,
       PricingStepSlice,
       PricingStepSliceDefaultPrimary,
       PricingStepSliceVariation,

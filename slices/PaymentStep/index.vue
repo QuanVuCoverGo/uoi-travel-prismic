@@ -1,3 +1,54 @@
+<script setup lang="ts">
+import { type Content } from "@prismicio/client";
+import {
+  cardNumberRules,
+  getRequiredRules,
+  validThruRules,
+} from "@/composables/rules";
+import { useInformationStore } from "@/stores/InformationStore";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const store = useInformationStore();
+
+const router = useRouter();
+
+const paymentForm = ref();
+
+const handleUpdateCardNumber = (v: any) => {
+  // Card number without dash (-)
+  const realNumber = v?.replace(/-/gi, "");
+
+  // Generate dashed number
+  const dashedNumber = realNumber.match(/.{1,4}/g);
+
+  // Replace the dashed number with the real one
+  store.payment.cardNumber = dashedNumber?.join("-");
+};
+
+const handleNext = async () => {
+  const { valid } = await paymentForm.value?.validate();
+  if (!valid) return;
+  navigateTo(`/workflows/issue-finish`);
+};
+
+const handleBack = async () => {
+  store.step = 4;
+  onPrevious(5);
+};
+
+// The array passed to `getSliceComponentProps` is purely optional.
+// Consider it as a visual hint for you when templating your slice.
+defineProps(
+  getSliceComponentProps<Content.PaymentStepSlice>([
+    "slice",
+    "index",
+    "slices",
+    "context",
+  ])
+);
+</script>
+
 <template>
   <WorkFlowLayout>
     <v-container class="pa-10 w-75 h-100">
@@ -8,10 +59,12 @@
         color="primary"
         class="text-none"
         @click="handleBack"
-        >Back</v-btn
+        >{{ slice.primary.top_left_button_text }}</v-btn
       >
       <div class="d-flex justify-center align-center">
-        <h3 class="text-left color-blue header mb-10">Payment</h3>
+        <h3 class="text-left color-blue header mb-10">
+          <PrismicText :field="slice.primary.title"></PrismicText>
+        </h3>
       </div>
       <v-form
         ref="paymentForm"
@@ -63,9 +116,9 @@
               </v-col>
             </v-row>
             <div class="d-flex justify-space-aound">
-              <v-img width="61" height="39" src="../assets/visa.png" />
-              <v-img width="61" height="39" src="../assets/master.png" />
-              <v-img width="61" height="39" src="../assets/ae.png" />
+              <v-img width="61" height="39" src="/visa.png" />
+              <v-img width="61" height="39" src="/master.png" />
+              <v-img width="61" height="39" src="/ae.png" />
             </div>
           </template>
         </v-card>
@@ -78,7 +131,7 @@
               color="primary"
               class="text-none"
               @click="store.step = 4"
-              >Back</v-btn
+              >{{ slice.primary.back_button_text }}</v-btn
             >
             <v-btn
               class="text-none"
@@ -86,7 +139,7 @@
               prepend-icon="arrow_forward"
               color="primary"
               type="submit"
-              >Continue</v-btn
+              >{{ slice.primary.back_button_text }}</v-btn
             >
           </div>
         </div>
@@ -94,44 +147,7 @@
     </v-container>
   </WorkFlowLayout>
 </template>
-<script setup lang="ts">
-import {
-  cardNumberRules,
-  getRequiredRules,
-  validThruRules,
-} from "@/composables/rules";
-import { useInformationStore } from "@/stores/InformationStore";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
 
-const store = useInformationStore();
-
-const router = useRouter();
-
-const paymentForm = ref();
-
-const handleUpdateCardNumber = (v: any) => {
-  // Card number without dash (-)
-  const realNumber = v?.replace(/-/gi, "");
-
-  // Generate dashed number
-  const dashedNumber = realNumber.match(/.{1,4}/g);
-
-  // Replace the dashed number with the real one
-  store.payment.cardNumber = dashedNumber?.join("-");
-};
-
-const handleNext = async () => {
-  const { valid } = await paymentForm.value?.validate();
-  if (!valid) return;
-  navigateTo(`/workflows/issue-finish`);
-};
-
-const handleBack = async () => {
-  store.step = 4;
-  onPrevious(5);
-};
-</script>
 <style>
 .payment-card {
   width: 580px;

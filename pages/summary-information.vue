@@ -239,7 +239,6 @@ const formatPrice = (num: number) => {
 }
 
 .applicant-card {
-  width: 580px;
   border-radius: 8px;
   gap: 40px;
   background-color: "red";

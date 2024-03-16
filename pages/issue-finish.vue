@@ -86,7 +86,7 @@ useHead({
   ],
 });
 </script>
-<style>
+<style scoped>
 .a-main {
   background-color: #f4f4f6;
   min-height: 100vh;

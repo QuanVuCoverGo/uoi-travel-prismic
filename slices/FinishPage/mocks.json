@@ -14,6 +14,16 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "rod",
+				"type": "Text"
+			},
+			"wish_text": {
+				"__TYPE__": "FieldContent",
+				"value": "average",
+				"type": "Text"
 			}
 		},
 		"items": [

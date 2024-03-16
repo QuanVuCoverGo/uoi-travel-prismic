@@ -16,6 +16,7 @@ export const components = defineSliceZoneComponents({
   navigation_bar: defineAsyncComponent(
     () => import("./NavigationBar/index.vue"),
   ),
+  payment_step: defineAsyncComponent(() => import("./PaymentStep/index.vue")),
   pricing_step: defineAsyncComponent(() => import("./PricingStep/index.vue")),
   summary_information: defineAsyncComponent(
     () => import("./SummaryInformation/index.vue"),
