@@ -139,7 +139,7 @@ defineProps(
               prepend-icon="arrow_forward"
               color="primary"
               type="submit"
-              >{{ slice.primary.back_button_text }}</v-btn
+              >{{ slice.primary.next_button_text }}</v-btn
             >
           </div>
         </div>
