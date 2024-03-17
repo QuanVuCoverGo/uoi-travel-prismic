@@ -1,15 +1,13 @@
 <template>
-  <v-autocomplete
+  <v-select
     v-model="area"
     :items="AREAS_LIST"
     color="blue-grey-lighten-2"
     item-title="name"
     item-value="value"
     variant="outlined"
-    outline
-    chips
-    closable-chips
-    persistent-hint
+    label=""
+    :placeholder="placeholder"
     v-bind="props"
   >
     <template v-slot:item="{ props, item }">
@@ -17,10 +15,11 @@
         v-bind="props"
         :title="item.raw.name"
         :subtitle="item.raw.description"
+        class="py-3"
       >
       </v-list-item>
     </template>
-  </v-autocomplete>
+  </v-select>
 </template>
 <script setup>
 import { useVModel } from "@/composables/useVModel";
@@ -28,7 +27,7 @@ import { defineProps, defineEmits } from "vue";
 import { AREAS_LIST } from "@/constants";
 
 const props = defineProps({
-  label: { type: String, default: "Area" },
+  placeholder: { type: String, default: "Area" },
   modelValue: { type: String },
   showLabel: { type: Boolean, default: false },
 });

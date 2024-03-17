@@ -13,9 +13,13 @@
     persistent-hint
     v-bind="props"
     multiple
+    label=""
+    :placeholder="placeholder"
   >
     <template v-slot:chip="{ props, item }">
       <v-chip
+        class="py-5"
+        size="large"
         v-bind="props"
         :prepend-avatar="item.raw.imageSrc"
         :text="item.raw.name"
@@ -39,7 +43,7 @@ import { COUNTRIES_WITH_FLAG } from "@/constants";
 import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
-  label: { type: String, default: "Destination" },
+  placeholder: { type: String, default: "Destination" },
   modelValue: { type: Object },
   showLabel: { type: Boolean, default: false },
 });
