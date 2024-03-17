@@ -645,7 +645,8 @@ defineProps(
   justify-content: center;
   align-items: center;
   box-shadow: 0px 1px 5px 0px #0000001f;
-  padding: 10px 50px 10px 50px;
+  padding: 10px 40px 10px 40px;
+  border: 2px solid white;
 }
 
 .header-cell {
@@ -661,6 +662,7 @@ defineProps(
   border-top-right-radius: 8px;
   box-shadow: 0px 1px 5px 0px #0000001f;
   padding: 10px 20px 10px 20px;
+  border: 2px solid white;
 }
 
 .footer-cell {
@@ -675,6 +677,7 @@ defineProps(
   border-bottom-right-radius: 8px;
   box-shadow: 0px 1px 5px 0px #0000001f;
   gap: 4px;
+  border: 2px solid white;
 }
 
 .name-cell {
@@ -730,7 +733,7 @@ defineProps(
   letter-spacing: 0px;
   text-align: left;
   color: #1976d2;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .costPrice {

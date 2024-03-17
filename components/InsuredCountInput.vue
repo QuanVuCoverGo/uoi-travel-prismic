@@ -1,7 +1,7 @@
 <template>
-  <v-container class="m3-4">
+  <v-container class="pl-0">
     <v-row class="ga-4 w-75 p-2">
-      <v-col class="d-flex mr-6">
+      <v-col class="d-flex mr-6 ga-4">
         <div class="label">{{ label }}</div>
         <v-tooltip v-if="tooltipContent" max-width="300" :text="tooltipContent">
           <template v-slot:activator="{ props }">
@@ -15,14 +15,14 @@
             variant="outlined"
             :disabled="count === (min || 1)"
             @click="descrease()"
-            >-</v-btn
+            ><v-icon>remove</v-icon></v-btn
           >
           <p class="label pt-2">{{ count }}</p>
           <v-btn
             variant="outlined"
             :disabled="count === (max || 8)"
             @click="increase()"
-            >+</v-btn
+            ><v-icon>add</v-icon></v-btn
           >
         </v-row>
       </v-col>

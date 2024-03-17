@@ -274,9 +274,10 @@ defineProps(
 }
 
 .applicant-card {
+  width: 600px;
   border-radius: 8px;
   gap: 40px;
-  background-color: "red";
+  /* background-color: red; */
 }
 
 .card-title {

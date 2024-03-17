@@ -127,22 +127,15 @@ defineProps(
               <v-item v-slot="{ isSelected, toggle }">
                 <v-card
                   class="d-flex align-center pa-4 card-no-shadow w-100 justify-center mr-4"
-                  :class="
-                    isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-4'
-                  "
+                  :class="isSelected ? 'blue-border bg-white' : 'bg-white'"
                   min-height="191"
                   width="292"
                   dark
                   @click="!isSelected && toggle?.()"
                 >
-                  <v-icon
-                    v-if="isSelected"
-                    class="absolute-button"
-                    color="info"
-                    size="small"
-                  >
-                    check_circle
-                  </v-icon>
+                  <div v-if="isSelected" class="check-icon-box">
+                    <v-img src="/checked.svg"></v-img>
+                  </div>
                   <div class="absolute-left">
                     <v-tooltip
                       max-width="300"
@@ -156,8 +149,11 @@ defineProps(
                     </v-tooltip>
                   </div>
                   <div class="d-flex align-center flex-column ga-2">
-                    <v-icon :color="isSelected ? 'info' : 'none'" size="64">
-                      luggage
+                    <v-icon
+                      :color="isSelected ? 'primary' : '#656565'"
+                      size="64"
+                    >
+                      custom:singleTrip
                     </v-icon>
                     <div
                       :class="isSelected ? 'text-blue-darken-2' : ''"
@@ -175,21 +171,15 @@ defineProps(
                 <v-card
                   :class="[
                     'd-flex align-center pa-4 card-no-shadow w-100 justify-center ml-4',
-                    isSelected ? 'blue-border bg-white' : 'bg-grey-lighten-4',
+                    isSelected ? 'blue-border bg-white' : 'bg-white',
                   ]"
                   min-height="191"
-                  :color="isSelected ? 'white' : 'grey-lighten-3'"
                   dark
                   @click="!isSelected && toggle?.()"
                 >
-                  <v-icon
-                    v-if="isSelected"
-                    class="absolute-button"
-                    color="info"
-                    size="small"
-                  >
-                    check_circle
-                  </v-icon>
+                  <div v-if="isSelected" class="check-icon-box">
+                    <v-img src="/checked.svg"></v-img>
+                  </div>
                   <div class="absolute-left">
                     <v-tooltip
                       max-width="300"
@@ -206,8 +196,10 @@ defineProps(
                   <div
                     class="d-flex flex-column align-center justify-center ga-2"
                   >
-                    <v-icon :color="isSelected ? 'info' : 'none'" size="64"
-                      >public</v-icon
+                    <v-icon
+                      :color="isSelected ? 'primary' : '#656565'"
+                      size="64"
+                      >custom:annualMultitrip</v-icon
                     >
                     <div
                       :class="isSelected ? 'text-blue-darken-2' : ''"
@@ -370,5 +362,13 @@ defineProps(
 .margin-row {
   margin: 0;
   margin-bottom: -20px !important;
+}
+
+.check-icon-box {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 </style>

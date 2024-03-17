@@ -184,6 +184,7 @@ defineProps(
               :rules="getRequiredRules('This action')"
               v-model="store.isTermAgreed"
               class="confirm-box"
+              color="primary"
             >
               <template v-slot:label>
                 <p class="term-text">
@@ -229,7 +230,6 @@ defineProps(
 .applicant-card {
   border-radius: 8px;
   gap: 40px;
-  background-color: "red";
 }
 
 .card-title {
@@ -306,7 +306,7 @@ defineProps(
 }
 
 .display-card {
-  width: 580px;
+  width: 600px;
   border-radius: 8px;
   box-shadow: 0px 1px 5px 0px #0000001f;
   background-color: white;

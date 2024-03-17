@@ -34,6 +34,7 @@ export default {
   line-height: 25px;
   letter-spacing: 1px;
   text-align: center;
+  color: #656565;
 }
 
 .description {

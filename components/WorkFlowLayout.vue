@@ -94,6 +94,7 @@ useHead({
 .card-no-shadow {
   box-shadow: none;
   border: 1px solid #0000002e;
+  color: #656565;
 }
 
 .brown-main {
@@ -118,5 +119,10 @@ useHead({
 
 .v-icon--size-x-large {
   font-size: calc(var(--v-icon-size-multiplier) * 2em) !important;
+}
+.absolute-left {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 </style>

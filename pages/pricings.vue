@@ -633,6 +633,7 @@ onMounted(() => {
   align-items: center;
   box-shadow: 0px 1px 5px 0px #0000001f;
   padding: 10px 50px 10px 50px;
+  border: 2px solid white;
 }
 
 .header-cell {
