@@ -100,15 +100,6 @@ defineProps(
 <template>
   <WorkFlowLayout>
     <v-container class="pa-10 w-75">
-      <v-btn
-        size="x-large"
-        prepend-icon="arrow_back"
-        variant="text"
-        color="primary"
-        class="text-none"
-        @click="handleBack"
-        >{{ slice.primary.top_left_button_text }}</v-btn
-      >
       <v-row class="mb-10">
         <v-col cols="4"></v-col>
         <v-col>

@@ -52,15 +52,6 @@ defineProps(
 <template>
   <WorkFlowLayout>
     <v-container class="pa-10 w-75 h-100">
-      <v-btn
-        size="x-large"
-        prepend-icon="arrow_back"
-        variant="text"
-        color="primary"
-        class="text-none"
-        @click="handleBack"
-        >{{ slice.primary.top_left_button_text }}</v-btn
-      >
       <div class="d-flex justify-center align-center">
         <h3 class="text-left color-blue header mb-10">
           <PrismicText :field="slice.primary.title"></PrismicText>
@@ -130,7 +121,7 @@ defineProps(
               variant="outlined"
               color="primary"
               class="text-none"
-              @click="store.step = 4"
+              @click="handleBack"
               >{{ slice.primary.back_button_text }}</v-btn
             >
             <v-btn

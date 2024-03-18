@@ -128,4 +128,8 @@ const typeOfInsurance = useVModel(props, "modelValue", emits);
   top: 10px;
   left: 10px;
 }
+
+.blue-border {
+  border: 2px solid #397ded !important;
+}
 </style>

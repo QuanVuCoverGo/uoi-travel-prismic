@@ -89,15 +89,6 @@ defineProps(
 <template>
   <WorkFlowLayout>
     <v-container class="pa-10 w-75">
-      <v-btn
-        size="x-large"
-        prepend-icon="arrow_back"
-        variant="text"
-        color="primary"
-        class="text-none"
-        @click="handleBack"
-        >{{ slice.primary.top_left_button_text }}</v-btn
-      >
       <div class="d-flex justify-center align-center">
         <h3 class="text-left color-blue header mb-10">
           <PrismicText :field="slice.primary.title"></PrismicText>
@@ -112,8 +103,8 @@ defineProps(
           <v-card style="padding: 30px 70px" class="applicant-card">
             <template v-slot:title>
               <div class="card-padding">
-                <p class="card-title mb-4 text-center">
-                  Insured Person 1(Applicant)
+                <p class="card-title mb-4 text-left">
+                  Insured Person 1 (Applicant)
                 </p>
               </div>
             </template>
@@ -189,7 +180,6 @@ defineProps(
 
                   <v-text-field
                     variant="outlined"
-                    type="number"
                     label="PostalCode"
                     :rules="getRequiredRules('PostalCode')"
                     v-model="store.insureds.address.postalCode"
